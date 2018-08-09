@@ -1,0 +1,80 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+h2 {
+  color:white;
+ /* color:rgb(0, 0, 0); */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+h3 {
+  color:rgb(18, 99, 192);
+ /* color:rgb(0, 0, 0); */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.label{
+  background-color:rgb(212, 227, 245);
+}
+.mat-tab-link{
+  min-width: 35px !important;
+  padding: 5px;
+  background-color:rgb(212, 227, 245);
+ color:rgb(18, 99, 192);
+  font-weight: 1000;
+  font-size: 20px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+}
+ /* mat-grid-tile {
+background-color:rgb(4, 80, 167);
+  }   */
+  .my-grid-tile2{
+    background-color:white;
+  } 
+.my-grid-tile{
+  background-color:rgb(212, 227, 245);
+}
+ .my-grid-tile1{
+  padding-top:5px !important;
+  background-color:rgb(4, 80, 167);
+  /* background-color:white; */
+ }
+ .mat-card{
+  align-items:none;
+  object-position: 0%;
+  background-position-y: 25%; 
+  border:10px;
+}
+ .mat-form-field {
+  width:none;
+}
+.mat-select-value {
+  max-width: 100%;
+  width: auto;
+  color:rgb(243, 154, 154);
+}   
+ .mat-form-field-infix { 
+  width: auto; 
+}  
+.mat-button {
+    min-width: 35px !important;
+  padding: 10px;
+  background-color:rgb(4, 80, 167);
+  color:rgb(86, 224, 22);
+  font-weight: 1000;
+  font-size: 20px;
+  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+}
+.span{
+  color:rgb(235, 14, 14);
+}
+.Button{
+  color:rgb(235, 14, 14);
+}
+/* .navLinks{
+  background-color:rgb(4, 80, 167);
+} */
+ /* .mat-select-content{
+  width:2000px !important;  
+   font-size: 10px !important;
+  
+}   
+ */

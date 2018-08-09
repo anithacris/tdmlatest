@@ -1,0 +1,26 @@
+<p>
+  tdmdisplay works!
+</p>
+<h3>Find By Terminal Code</h3>
+<div style="width: 300px;">
+	<form (ngSubmit)="onSubmit()">
+		<div class="form-group">
+			<label for="terminalcode">Terminal Code</label> <input type="text"
+				class="form-control" id="terminalCode" required [(ngModel)]="terminalCode"
+				name="terminalCode">
+		</div>
+ 
+		<div class="btn-group">
+			<button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+		</div>
+	</form>
+</div>
+<ul>
+	<li *ngFor="let tdm of tdms">
+		<h4>{{tdm.id}} - {{tdm.terminalCode}} {{tdm.bookingCode}} {{tdm.windowNo}} {{tdm.terminalType}} {{tdm.terminalIp}}
+      {{tdm.posTid}} {{tdm.bankName}} {{tdm.serviceProvider}} {{tdm.posVersionCode}}
+      {{tdm.posappTerType}} {{tdm.termParameter}}  {{tdm.termOperType1}} {{tdm.termOperType2}} {{tdm.termOperType3}} {{tdm.termOperType4}} 
+      {{tdm.macAddress}}  {{tdm.stationServerId}}  
+    </h4>
+	</li>
+</ul>

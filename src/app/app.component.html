@@ -1,0 +1,106 @@
+ 
+<mat-card>
+        <mat-grid-list cols=12 rowHeight="40px">
+          <mat-grid-tile colspan=2 rowspan=1 class="my-grid-tile1"></mat-grid-tile>
+          <mat-grid-tile colspan=8 rowspan=1 class="my-grid-tile1">
+            <div style="text-align:center">
+              <h2> {{ title }} </h2>
+            </div>  
+          </mat-grid-tile>
+           <mat-grid-tile colspan=2 rowspan=1 class="my-grid-tile1"></mat-grid-tile> 
+      </mat-grid-list>
+    
+      <!-- <form [formGroup] = "lfForm" (ngSubmit)="onSubmit()"> -->
+            <mat-card> 
+                   
+         <!-- <mat-grid-tile colspan=1 rowspan=1></mat-grid-tile>  -->
+          
+            <!-- <mat-tab-group [disableRipple]=true style="margin: 10px; 
+                                  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+              <mat-tab label= "Create Terminal"   >Report Loss    </mat-tab>
+              <mat-tab label= "Modify Terminal"  >Report Found   </mat-tab>
+              <mat-tab label= "Delete Terminal">Modify Lost ID </mat-tab>
+              <mat-tab label= "Print  Terminal">Print  Lost ID </mat-tab>
+            </mat-tab-group> -->
+            <nav mat-tab-nav-bar>
+            <!-- <nav mat-tab-nav-bar class="container p-0"> -->
+                    <a mat-tab-link class="card mr-1 mat-elevation-z2 font-weght-bold text-lg" 
+                                   style="margin: 10px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"
+                                     *ngFor="let link of navLinks"
+                                     [routerLink]="link.path"
+                                routerLinkActive #rla="routerLinkActive"
+                                (Onclick)="activeLinkIndex"
+                                     [active]="rla.isActive">
+                                    <span class="font-weight-bold py-0">{{link.label}}</span>
+                                    <div></div>
+                                 </a>
+                                </nav>
+                               <router-outlet></router-outlet>
+          <!-- <mat-grid-tile colspan=1 rowspan=1></mat-grid-tile> -->
+          <!-- </div> -->
+        
+        </mat-card>
+      
+      <mat-card style="align-self: center" > 
+   <mat-grid-list cols=12 rowHeight="30px"> 
+        
+        <div class="content">
+        <mat-grid-tile class="my-grid-tile2" colspan=12 rowspan=2>
+           <button mat-button class="Final">Submit</button>
+            <button mat-button class="Final">Reset</button>
+            
+        </mat-grid-tile>
+      </div>
+     </mat-grid-list> 
+      </mat-card>
+    </mat-card>
+      <!-- </form> -->
+      
+      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- <div class="">
+ <mat-horizontal-stepper>
+       <mat-step label="Terminal Definition Management"> 
+        <div class="card  mat-elevation-z4 mb-2"> 
+          <nav mat-tab-nav-bar class="container p-0">
+<a mat-tab-link 
+[ngClass]="{'text-light bg-primary': !rla.isActive, 'text-dark bg-light': rla.isActive}"
+               class="card mr-2 mat-elevation-z4 font-weght-bold text-lg"
+                 *ngFor="let link of navLinks"
+                 [routerLink]="link.path"
+            routerLinkActive #rla="routerLinkActive"
+            (Onclick)="activeLinkIndex"
+                 [active]="rla.isActive">
+                <span class="font-weight-bold py-1">{{link.label}}</span>
+                <div></div>
+             </a>
+            </nav>
+           <router-outlet></router-outlet>
+           
+            <div class = "text-center">
+                <button mat-raised-button matStepperPrevious type="button" disabled>Back</button>
+                <button mat-raised-button matStepperNext type="button" color="accent">Next</button>
+            </div>
+       </div>
+        </mat-step> 
+     -->
