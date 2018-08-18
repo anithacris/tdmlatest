@@ -1,26 +1,19 @@
-<p>
-  tdmdisplay works!
-</p>
-<h3>Find By Terminal Code</h3>
-<div style="width: 300px;">
-	<form (ngSubmit)="onSubmit()">
-		<div class="form-group">
-			<label for="terminalcode">Terminal Code</label> <input type="text"
-				class="form-control" id="terminalCode" required [(ngModel)]="terminalCode"
-				name="terminalCode">
-		</div>
+<mat-grid-list cols=5 rowHeight="1:2">
+	<mat-grid-tile  class="my-grid-tile" colspan=1 rowspan=1>
+			<div class="row">
+<a mat-list-item class="card mr-1 mat-elevation-z2 font-weght-bold text-lg" 
+ *ngFor="let link of navLinks"
+[routerLink]="link.path" 
+(Onclick)="activeLinkIndex"
+		 >
+<br> <span class="font-weight-bold py-0">{{link.label}}
  
-		<div class="btn-group">
-			<button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
-		</div>
-	</form>
+</span>
+ </a>
+
 </div>
-<ul>
-	<li *ngFor="let tdm of tdms">
-		<h4>{{tdm.id}} - {{tdm.terminalCode}} {{tdm.bookingCode}} {{tdm.windowNo}} {{tdm.terminalType}} {{tdm.terminalIp}}
-      {{tdm.posTid}} {{tdm.bankName}} {{tdm.serviceProvider}} {{tdm.posVersionCode}}
-      {{tdm.posappTerType}} {{tdm.termParameter}}  {{tdm.termOperType1}} {{tdm.termOperType2}} {{tdm.termOperType3}} {{tdm.termOperType4}} 
-      {{tdm.macAddress}}  {{tdm.stationServerId}}  
-    </h4>
-	</li>
-</ul>
+</mat-grid-tile> 
+<mat-grid-tile  class="my-grid-tile" colspan=4 rowspan=1>
+	<router-outlet></router-outlet>
+</mat-grid-tile> 
+</mat-grid-list>

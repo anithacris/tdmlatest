@@ -9,6 +9,7 @@ import { TdmaddComponent } from './tdmadd/tdmadd.component';
 import { TdmmodifyComponent } from './tdmmodify/tdmmodify.component';
 import { TdmdisplayComponent } from './tdmdisplay/tdmdisplay.component';
 import { TdmDetailsComponent } from './tdm-details/tdm-details.component';
+import { TdmdetailterComponent } from './tdmdisplay/tdmdetailter/tdmdetailter.component';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { TdmDetailsComponent } from './tdm-details/tdm-details.component';
     AppRoutingModule
   ],
   entryComponents: [],
-  declarations: [TdmaddComponent,TdmmodifyComponent, TdmdisplayComponent, TdmDetailsComponent]
+  declarations: [TdmaddComponent,TdmmodifyComponent, TdmdisplayComponent, TdmDetailsComponent, TdmdetailterComponent]
 })
 
 export class TdmmenuModule { }

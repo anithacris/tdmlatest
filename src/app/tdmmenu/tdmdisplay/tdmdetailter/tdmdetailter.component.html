@@ -1,0 +1,95 @@
+
+<h3>Find By Terminal Code</h3>
+<!-- <div style="width:500px;"> -->
+  <div>
+	<form (ngSubmit)="onSubmit()">
+		<div class="form-group">
+			<label for="terminalcode">Terminal Code</label> <input type="text"
+				class="form-control" id="terminalCode" required [(ngModel)]="terminalCode"
+				name="terminalCode">
+		</div>
+ 
+		<div class="btn-group">
+			<button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+		</div>
+	</form>
+</div>
+<h3>Display Terminal Details</h3>
+<!-- <ul>
+  
+	<li *ngFor="let tdm of tdms">
+		<h4>{{tdm.id}} - {{tdm.terminalCode}} {{tdm.bookingCode}} {{tdm.windowNo}} {{tdm.terminalType}} {{tdm.terminalIp}}
+      {{tdm.posTid}} {{tdm.bankName}} {{tdm.serviceProvider}} {{tdm.posVersionCode}}
+      {{tdm.posappTerType}} {{tdm.termParameter}}  {{tdm.termOperType1}} {{tdm.termOperType2}} {{tdm.termOperType3}} {{tdm.termOperType4}} 
+      {{tdm.macAddress}}  {{tdm.stationServerId}}  
+    </h4>
+	</li>
+</ul> -->
+<!-- <table>
+  <tr>
+    <th>TerminalCode</th>
+    <th>BookingCode</th>
+    <th>Window No</th>
+  </tr>
+  <tr *ngFor="let tdm of tdms">
+    <th>{{tdm.terminalCode}}</th>
+    <th>{{tdm.bookingCode}}</th>
+   <th>{{tdm.windowNo}}</th> 
+  </tr>
+</table> -->
+<div  class="card  mat-elevation-z4 table-responsive text-sm my-3 text-center">
+  <table class="table table-bordered my-0">
+    <thead class="text-dark bg-light">
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">TerminalCode</th>
+        <th scope="col">Zone</th>
+        <th scope="col">BookingCode</th>
+        <th scope="col">ApplTrmlType</th>
+        <th scope="col">Cash</th>
+        <th scope="col">Ext</th>
+        <th scope="col">Uts</th>
+        </tr>
+      </thead>
+      <tbody class="text-dark">
+          <tr *ngFor="let tdm of tdms">
+            <td scope="row" class="text-primary"></td>
+            <td>{{tdm.id}}</td>
+            <td>{{tdm.terminalCode}}</td>
+            <td>{{tdm.zone}}</td>
+            <td>{{tdm.bookingCode}}</td>
+            <td>{{tdm.terminalType}}</td>
+            <td> {{tdm.cash}}</td>
+            <td>{{tdm.ext}}</td>
+            <td>{{tdm.uts}}</td>
+            </tr>
+          </tbody> 
+          <thead class="text-dark bg-light">    
+        <tr>
+        <th scope="col">Prt</th>
+        <th scope="col">TerminalAccess</th>
+        <th scope="col">windowNo</th>
+        <th scope="col">TerminalIp</th>
+        <th scope="col">PosTid</th>
+        <th scope="col">Bank</th>
+        <th scope="col">Provider</th>
+        <th scope="col">PosVerNumber</th>
+      </tr>
+    </thead>
+    <tbody class="text-dark">
+        <tr *ngFor="let tdm of tdms">
+        <td>{{tdm.Prt}}</td>
+        <td>{{tdm.terminalAccess}}</td>
+        <td>{{tdm.windowNo}}</td>
+        <td>{{tdm.terminalIp}} </td>
+        <td>{{tdm.posTid}}</td>
+        <td>{{tdm.bankName}}</td>
+        <td>{{tdm.serviceProvider}}</td>
+        <td>{{tdm.posVersionCode}}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

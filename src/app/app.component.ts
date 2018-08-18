@@ -23,9 +23,9 @@ export class AppComponent {
   },
   {    
     label: 'Display Terminal',
-    path: './findbyterminalCode',
+    path: './tdmdisplay',
     index: 3
-  }
+  },
   // {    
   //   label: 'Display Terminal',
   //   path: './tdm',
