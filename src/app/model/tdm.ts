@@ -1,4 +1,5 @@
 export class Tdm{
+  [x: string]: any;
     terminalCode:String;
     bookingCode:String;
     windowNo:number;

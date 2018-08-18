@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder ,FormControl,Validators} from '@angular/forms';
+import { Tdm } from '../../model/tdm';
+import { CommonService } from '../../services/common.service';
 //import { truncate } from 'fs';
 //import { Commonservice } from './app/services/Common.Service';
 
@@ -9,7 +11,8 @@ import { FormGroup, FormBuilder ,FormControl,Validators} from '@angular/forms';
   styleUrls: ['./tdmadd.component.css']
 })
 export class TdmaddComponent implements OnInit {
-  
+  tdm=new Tdm;
+  submitted=false;
 
   CommonService: any;
   createterminal : FormGroup;
@@ -76,7 +79,7 @@ OperTypes4=[ {value:'With PRS Printer',viewValue:'With PRS Printer'},
 
 
 
-  constructor( private fb: FormBuilder) {
+  constructor( private fb: FormBuilder,private commonService:CommonService) {
     this.terminalCode= new FormControl('', [Validators.required]);
     this.bookingCode= new FormControl('', [Validators.required]);
     this.windowNumber= new FormControl('', [Validators.required]);
@@ -162,7 +165,41 @@ OperTypes4=[ {value:'With PRS Printer',viewValue:'With PRS Printer'},
   ngOnInit() {
     
 }
+// newTdm():void{
+//   this.submitted = false;
+//   this.tdm = new Tdm();
+// }
+// private save():void{
+//   this.commonService.create(this.tdm);
+// }
+// OnSubmit(){
+//   this.submitted = true;
+//   this.save();
+// }
 
+newTdm(terminalcode_val,bookingcode_val,windowno_val,terminaltype_val,terminalip_val,postid_val,bankname_val,serviceprovider_val,posversioncode_val,AppterType,TermParam,TeroperType1,TeroperType2,TeroperType3,TeroperType4,macaddress_val,stationserverid_val){
+this.tdm.terminalCode=terminalcode_val;
+this.tdm.bookingCode=bookingcode_val;
+this.tdm.windowNo=windowno_val;
+this.tdm.terminalType=terminaltype_val;
+this.tdm.terminalIp=terminalip_val.toString();
+this.tdm.posTid=postid_val.toString();
+this.tdm.bankName=bankname_val;
+this.tdm.serviceProvider=serviceprovider_val;
+this.tdm.posVersionCode=posversioncode_val.toString();
+this.tdm.appterType=AppterType;
+
+this.tdm.termParameter=TermParam;
+this.tdm.termOperType1=TeroperType1;
+this.tdm.termOperType2=TeroperType2;
+this.tdm.termOperType3=TeroperType3;
+this.tdm.termOperType4=TeroperType4;
+this.tdm.macAddress=macaddress_val;
+this.tdm.stationServerId=stationserverid_val;
+
+console.log("entering into database"+this.tdm.terminalCode);
+this.commonService.create(this.tdm);
+}
 
 }
 

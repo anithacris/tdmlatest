@@ -5,7 +5,9 @@
             <mat-grid-tile  class="my-grid-tile" colspan=1 rowspan=3>
      <div class="card-header py-4 bg-light text-dark font-weight-bold"> 
        <h3 align="center">Create New Terminal</h3>
+       <div [hidden]="submitted" style="width:300px;">
       </div> 
+      </div>
       </mat-grid-tile>
 </mat-grid-list>     
  <div style="align-self: center">
@@ -14,35 +16,35 @@
          <mat-grid-tile  class="my-grid-tile" colspan=1 rowspan=3>
      <div class="row"> 
          <mat-form-field class="col-md-4 col-sm-6 col-12">
-           <input formControlName="terminalCode" matInput placeholder="Terminal code" name="termcode" autocomplete="off" required minlength="6" maxlength="10">
+           <input formControlName="terminalCode" matInput placeholder="Terminal code" [(ngModel)]="terminalcode_val" name="termcode" autocomplete="off" required minlength="6" maxlength="10">
          </mat-form-field>
          <mat-form-field class="col-md-4 col-sm-6 col-12">
-           <input formControlName="bookingCode" matInput placeholder="Booking Code" required minlength="4" maxlength="10">
+           <input formControlName="bookingCode" matInput placeholder="Booking Code"  [(ngModel)]="bookingcode_val" required minlength="4" maxlength="10">
               </mat-form-field>
               <mat-form-field class="col-md-4 col-sm-6 col-12">
-              <input formControlName="windowNumber" matInput placeholder="Window No" required minlength="1" maxlength="10" (keypress)="onlyNumericInput($event)"
+              <input formControlName="windowNumber" matInput placeholder="Window No" [(ngModel)]="windowno_val" required minlength="1" maxlength="10"
              > 
             </mat-form-field>
             
             <div></div>
              <mat-form-field class="col-md-3 col-sm-6 col-12">
-               <input formControlName="terminalType" matInput placeholder="Terminal Type" name="termtype" autocomplete="off" required minlength="6" maxlength="10">
+               <input formControlName="terminalType" matInput placeholder="Terminal Type" [(ngModel)]="terminaltype_val" name="termtype" autocomplete="off" required minlength="6" maxlength="10">
              </mat-form-field>
              <mat-form-field class="col-md-3 col-sm-6 col-6">
-               <input formControlName="terminalIp" matInput placeholder="Terminal Ip" name="termip" autocomplete="off" required minlength="6" maxlength="10">
+               <input formControlName="terminalIp" matInput placeholder="Terminal Ip" [(ngModel)]="terminalip_val" name="termip" autocomplete="off" required minlength="6" maxlength="20">
              </mat-form-field>
              <mat-form-field class="col-md-3 col-sm-6 col-6">
-               <input formControlName="posTid" matInput placeholder="Pos TID" name="postid" autocomplete="off" required minlength="6" maxlength="10">
+               <input formControlName="posTid" matInput placeholder="Pos TID" [(ngModel)]="postid_val" name="postid" autocomplete="off" required minlength="6" maxlength="10">
              </mat-form-field>
              <div></div>
              <mat-form-field class="col-md-3 col-sm-6 col-12">
-               <input formControlName="Bank" matInput placeholder="Bank Name" name="postid" autocomplete="off" required minlength="6" maxlength="10">
+               <input formControlName="Bank" matInput placeholder="Bank Name" [(ngModel)]="bankname_val" name="postid" autocomplete="off" required minlength="6" maxlength="10">
              </mat-form-field>
              <mat-form-field class="col-md-3 col-sm-6 col-12">
-               <input formControlName="ServiceProvider" matInput placeholder="Service Provider" name="postid" autocomplete="off" required minlength="6" maxlength="10">
+               <input formControlName="ServiceProvider" matInput placeholder="Service Provider" [(ngModel)]="serviceprovider_val" name="postid" autocomplete="off" required minlength="6" maxlength="10">
              </mat-form-field>
              <mat-form-field class="col-md-3 col-sm-6 col-12">
-               <input formControlName="PosVersioncode" matInput placeholder="Pos Version Code" name="postid" autocomplete="off" required minlength="6" maxlength="10">
+               <input formControlName="PosVersioncode" matInput placeholder="Pos Version Code" [(ngModel)]="posversioncode_val" name="postid" autocomplete="off" required minlength="6" maxlength="10">
              </mat-form-field>
   </div> 
 </mat-grid-tile> 
@@ -50,7 +52,7 @@
  
       <div class="checkter">To Check the Terminal UTS/PRS/Both
 
-         <mat-radio-group [(ngModel)]="check" (change)="terSelection($event)" 
+         <mat-radio-group [(ngModel)]="check" 
                            formControlName="check" >
                 <br><mat-radio-button value=1>PRS </mat-radio-button>
                 <mat-radio-button value=2>UTS</mat-radio-button>
@@ -127,10 +129,10 @@
    <div class="utster" *ngIf="createterminal.value.check == 2||createterminal.value.check == 3">
          <div>UTS Terminal</div>
          <mat-form-field class="col-md-3 col-sm-6 col-12">
-            <input formControlName="MacAddress" matInput placeholder="Mac Address" name="MacAddress" autocomplete="off" required minlength="18" maxlength="20">
+            <input formControlName="MacAddress" matInput placeholder="Mac Address" [(ngModel)]="macadress_val" name="MacAddress" autocomplete="off" required minlength="18" maxlength="20">
           </mat-form-field>
           <mat-form-field class="col-md-3 col-sm-6 col-12">
-              <input formControlName="StationServerID" matInput placeholder="Station Server ID" name="StationServerID" autocomplete="off" required minlength="8" maxlength="20">
+              <input formControlName="StationServerID" matInput placeholder="Station Server ID" [(ngModel)]="stationserverid_val" name="StationServerID" autocomplete="off" required minlength="8" maxlength="20">
             </mat-form-field>
             
     </div>  
@@ -139,7 +141,14 @@
   </mat-grid-tile>  
   </mat-grid-list> 
 
+<div class="btn-group" align="center">
+<mat-action-row>
+  <button mat-button  type="submit" (click)="newTdm(terminalcode_val,bookingcode_val,windowno_val,terminaltype_val,terminalip_val,postid_val,bankname_val,serviceprovider_val,posversioncode_val,AppterType,TermParam,TeroperType1,TeroperType2,TeroperType3,TeroperType4,macaddress_val,stationserverid_val)">Submit</button>
+  <button mat-button   type="submit">Clear</button> 
 
+</mat-action-row>
+ 
+</div>
 </form>
  </div> 
  </div> 
